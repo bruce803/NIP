@@ -1,9 +1,8 @@
 # NIP (Network Interaction Parser)
+In order to avoid the arguments curse, we split the NIP into two parts, the data preprocessing and parser. 
 
 ## Reading Data
 
-In order to avoid the arguments curse, we split the NIP into two parts, the data preprocessing and parser. 
-Data preprocessing
 Before the network analysis, we read all raw data into some temporal python pickle files [https://docs.python.org/3/library/pickle.html].  Generally, we have four kinds of data, two gene lists, one global network, and pathway/function data. This process can be done with the “readData” command. 
 Suppose that global network(net.txt), in gene list (cle.txt), out gene list (ple.txt), pathway (pathway_list, a directory) are stored in the current directory, one example of the dataRead command works as follows,
 Example：
