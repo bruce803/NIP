@@ -22,7 +22,7 @@ The overview of this tool box is,
 
 
 
-### Intersect
+### interact
 As illustrated by the Figure below, the public network was divided into three parts. The green and cyan lists are the two significant gene sets that we interested in, the red cluster (a-e) is the bridge between them.  The four green (x1, x2, x3, x4) and cyan nodes (y1, y2, y3, y4) are the shared genes between the public network and the two gene lists. In fact, the total number of the green or cyan nodes is more than 4. Figure 1 only plots the intersected part with the global network. Our target is to find out how the green list interacts with cyan list via the public network.  In this paper, we only focus on three different cases. The first case is that the green and cyan nodes may directly connected. That is the one hop case. If the number of directed connection is zero, we can further search the two hops links (just as the picture shows). Our toolbox can at most support the three hops case, namely the green and cyan nodes are bridged by two layers nodes.
 These three cases corresponding to the three choices of the “-l” and ”--layer” arguments. For example, the following command running for the third case (three hops),
 
@@ -31,7 +31,7 @@ These three cases corresponding to the three choices of the “-l” and ”--la
 The default setting is layer=2.
 ![A 2 hops example.](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
 
-###	Merge
+###	merge
 Merge the nodes in the middle layers. Usually, there are too many nodes in the intersected layer, so we may prefer to merge some nodes to simplify the network. One possible solution is that we can search the intersections between middle nodes and pathway/function lists. Then we merge these nodes and replace them with the ID of the corresponding pathway or function.
 The argument for merging is “--merge” or “-m”, 
 
@@ -52,6 +52,8 @@ For example, suppose user want to delete function “PTK2B” and gene “SYK”
 >Python run.py -d PTK2B SYK
 
 The delete operation can accept one or more arguments. So, we can delete one gene or function node, or delete some nodes at a time.
+
+![Delete the gene “JUN” in Figure 2 ](https://github.com/bruce803/NIP/blob/master/result/delete.png)
 
 ###	random sampling
 To validate that the candidate gene sets are distinguishable from random sampling, we can call the randomIntersect provided by NIP.  Suppose that there are 100 genes in the CLE list, 200 genes in the PLE list, we can run the following command to do the random sampling test,
