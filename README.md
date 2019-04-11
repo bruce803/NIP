@@ -32,7 +32,9 @@ The default setting is layer=2.
 Merge the nodes in the middle layers. Usually, there are too many nodes in the intersected layer, so we may prefer to merge some nodes to simplify the network. One possible solution is that we can search the intersections between middle nodes and pathway/function lists. Then we merge these nodes and replace them with the ID of the corresponding pathway or function.
 The argument for merging is “--merge” or “-m”, 
 
->Python run.py -l 3  -m 
+>Python run.py -l 2  -m 
+
+![merge](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
 
 3.	filter
 Suppose there are still lots of intersections after merging. And we do not plan to keep all the intersections because some of the intersections are less important. Hence, we propose two rules to filter the intersections. The first rule is the length of the intersection between pathway/function and gene list in the middle layer. We discard the intersections with length less than 3. For second, user can manually filter out some intersections by providing NIP a fdr. The NIP can calculate the p value for each intersection. Then it can filter out some less significant intersections according to the threshold of p value or FDR from user.  
@@ -50,7 +52,9 @@ The delete operation can accept one or more arguments. So, we can delete one gen
 
 5.	random sampling
 To validate that the candidate gene sets are distinguishable from random sampling, we can call the randomIntersect provided by NIP.  Suppose that there are 100 genes in the CLE list, 200 genes in the PLE list, we can run the following command to do the random sampling test,
+
 >Python randomIntersect.py -t 500 -i cle.txt -o ple.txt -l 2
+
 NIP will do intersect analysis with CLE and PLE list for one time, then sample 100 and 200 genes and search the 2 hop connections between the two groups for 500 times. The number of edges and nodes in the middle layer are recorded. For three layer case, we record the number of nodes in the two middle layers and all the edges.
 
 >.\networks>python randomIntersect.py -t 100 -i cle.txt -o ple.txt -l 3
