@@ -29,7 +29,11 @@ These three cases corresponding to the three choices of the “-l” and ”--la
 >Python run.py -l 2
 
 The default setting is layer=2.
-![A 2 hops example.](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
+
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![A 1 hop example.](https://github.com/bruce803/NIP/blob/master/result/intersection0.png)  |  ![A 2 hops example.](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
+
 
 ###	merge
 Merge the nodes in the middle layers. Usually, there are too many nodes in the intersected layer, so we may prefer to merge some nodes to simplify the network. One possible solution is that we can search the intersections between middle nodes and pathway/function lists. Then we merge these nodes and replace them with the ID of the corresponding pathway or function.
@@ -53,7 +57,7 @@ For example, suppose user want to delete function “PTK2B” and gene “SYK”
 
 The delete operation can accept one or more arguments. So, we can delete one gene or function node, or delete some nodes at a time.
 
-![Delete the gene “JUN” in Figure 2 ](https://github.com/bruce803/NIP/blob/master/result/delete.png)
+![Delete the gene “IRF4” in Figure 2 ](https://github.com/bruce803/NIP/blob/master/result/delete.png)
 
 ###	random sampling
 To validate that the candidate gene sets are distinguishable from random sampling, we can call the randomIntersect provided by NIP.  Suppose that there are 100 genes in the CLE list, 200 genes in the PLE list, we can run the following command to do the random sampling test,
