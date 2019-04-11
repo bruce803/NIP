@@ -16,7 +16,9 @@ Network parser
 In this section, we introduce the details of implementation of NIP toolbox.  The input variables includes a public gene network, two gene lists. Our target is to search the interactions between two gene lists over the public network. Four operations (intersect, merge, filter, delete) are provided for the convenience of achieving that goal.
 The overview of this tool box is,
 
-![A demo of NIP](http://github.com/bruce803/NIP/result/demo-NIP.png)
+![A demo of NIP](https://github.com/bruce803/NIP/blob/master/result/demo-NIP.png)
+
+
 
 1.	Intersect
 As illustrated by the Figure below, the public network was divided into three parts. The green and cyan lists are the two significant gene sets that we interested in, the red cluster (a-e) is the bridge between them.  The four green (x1, x2, x3, x4) and cyan nodes (y1, y2, y3, y4) are the shared genes between the public network and the two gene lists. In fact, the total number of the green or cyan nodes is more than 4. Figure 1 only plots the intersected part with the global network. Our target is to find out how the green list interacts with cyan list via the public network.  In this paper, we only focus on three different cases. The first case is that the green and cyan nodes may directly connected. That is the one hop case. If the number of directed connection is zero, we can further search the two hops links (just as the picture shows). Our toolbox can at most support the three hops case, namely the green and cyan nodes are bridged by two layers nodes.
