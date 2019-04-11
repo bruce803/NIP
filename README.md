@@ -30,7 +30,7 @@ These three cases corresponding to the three choices of the “-l” and ”--la
 
 The default setting is layer=2.
 
-Solarized dark             |  Solarized Ocean
+1 hop             |  2 hops
 :-------------------------:|:-------------------------:
 ![A 1 hop example.](https://github.com/bruce803/NIP/blob/master/result/intersection0.png)  |  ![A 2 hops example.](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
 
@@ -57,7 +57,7 @@ For example, suppose user want to delete function “PTK2B” and gene “SYK”
 
 The delete operation can accept one or more arguments. So, we can delete one gene or function node, or delete some nodes at a time.
 
-![Delete the gene “IRF4” in Figure 2 ](https://github.com/bruce803/NIP/blob/master/result/delete.png)
+![Delete the gene “IRF4” in Figure 2 (left panel) ](https://github.com/bruce803/NIP/blob/master/result/delete.png)
 
 ###	random sampling
 To validate that the candidate gene sets are distinguishable from random sampling, we can call the randomIntersect provided by NIP.  Suppose that there are 100 genes in the CLE list, 200 genes in the PLE list, we can run the following command to do the random sampling test,
