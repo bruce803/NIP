@@ -1,5 +1,7 @@
 # NIP (Network Interaction Parser)
 
+## Reading Data
+
 In order to avoid the arguments curse, we split the NIP into two parts, the data preprocessing and parser. 
 Data preprocessing
 Before the network analysis, we read all raw data into some temporal python pickle files [https://docs.python.org/3/library/pickle.html].  Generally, we have four kinds of data, two gene lists, one global network, and pathway/function data. This process can be done with the “readData” command. 
@@ -11,7 +13,7 @@ Example：
 The readData step returns us four python pickle files storing in the directory “.\data”. Actually, we do not have to care about these temporal files. It is just the preparation work for the next step—network parser.
 
 
-Network parser
+## Network parser
 
 In this section, we introduce the details of implementation of NIP toolbox.  The input variables includes a public gene network, two gene lists. Our target is to search the interactions between two gene lists over the public network. Four operations (intersect, merge, filter, delete) are provided for the convenience of achieving that goal.
 The overview of this tool box is,
