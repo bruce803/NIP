@@ -24,9 +24,10 @@ The overview of this tool box is,
 As illustrated by the Figure below, the public network was divided into three parts. The green and cyan lists are the two significant gene sets that we interested in, the red cluster (a-e) is the bridge between them.  The four green (x1, x2, x3, x4) and cyan nodes (y1, y2, y3, y4) are the shared genes between the public network and the two gene lists. In fact, the total number of the green or cyan nodes is more than 4. Figure 1 only plots the intersected part with the global network. Our target is to find out how the green list interacts with cyan list via the public network.  In this paper, we only focus on three different cases. The first case is that the green and cyan nodes may directly connected. That is the one hop case. If the number of directed connection is zero, we can further search the two hops links (just as the picture shows). Our toolbox can at most support the three hops case, namely the green and cyan nodes are bridged by two layers nodes.
 These three cases corresponding to the three choices of the “-l” and ”--layer” arguments. For example, the following command running for the third case (three hops),
 
->Python run.py -l 3
+>Python run.py -l 2
 
 The default setting is layer=2.
+![A 2 hops example.](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
 
 2.	Merge
 Merge the nodes in the middle layers. Usually, there are too many nodes in the intersected layer, so we may prefer to merge some nodes to simplify the network. One possible solution is that we can search the intersections between middle nodes and pathway/function lists. Then we merge these nodes and replace them with the ID of the corresponding pathway or function.
@@ -34,7 +35,7 @@ The argument for merging is “--merge” or “-m”,
 
 >Python run.py -l 2  -m 
 
-![merge](https://github.com/bruce803/NIP/blob/master/result/interaction2hops.png)
+![merge](https://github.com/bruce803/NIP/blob/master/result/merge.png)
 
 3.	filter
 Suppose there are still lots of intersections after merging. And we do not plan to keep all the intersections because some of the intersections are less important. Hence, we propose two rules to filter the intersections. The first rule is the length of the intersection between pathway/function and gene list in the middle layer. We discard the intersections with length less than 3. For second, user can manually filter out some intersections by providing NIP a fdr. The NIP can calculate the p value for each intersection. Then it can filter out some less significant intersections according to the threshold of p value or FDR from user.  
