@@ -1,6 +1,13 @@
 # NIP (Network Interaction Parser)
 In order to avoid the arguments curse, we split the NIP into two parts, the data preprocessing and parser. 
 
+##  Installation
+Download NIP package and install from the directory (Python version : 3.x):
+```
+git clone https://github.com/bruce803/NIP.git
+cd  NIP
+```
+
 # Get it started:
 ## Reading Data
 
@@ -59,9 +66,3 @@ The delete operation can accept one or more arguments. So, we can delete one gen
 
 ![Delete the gene “IRF4” in Figure 2 (left panel) ](https://github.com/bruce803/NIP/blob/master/result/delete.png)
 
-##  Installation
-Download NIP package and install from the directory (Python version : 3.x):
-```
-git clone https://github.com/bruce803/NIP.git
-cd  NIP
-```
